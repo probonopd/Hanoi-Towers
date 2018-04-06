@@ -16,7 +16,7 @@ script:
   - qmake CONFIG+=release PREFIX=/usr
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir -j$(nproc) install ; find appdir/
-  - mkdir -p appdir/usr ; appdir/opt/hanoi_towers/bin appdir/usr/ ; rm -rf appdir/opt # Bug in .pro file?
+  - mkdir -p appdir/usr ; mv appdir/opt/hanoi_towers/bin appdir/usr/ ; rm -rf appdir/opt # Bug in .pro file?
   - mkdir -p usr/share/icons/hicolor/256x256/apps/ ; cp res/icon.png usr/share/icons/hicolor/256x256/apps/hanoi-towers.png
   - mkdir -p appdir/usr/share/applications ; cp ../snap/gui/HanoiTower.desktop appdir/usr/share/applications
   - sed -i -e 's|/snap/hanoi-towers/current/meta/gui/icon.png|hanoi-towers|g' appdir/usr/share/applications/*.desktop
