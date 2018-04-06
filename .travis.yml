@@ -16,8 +16,8 @@ script:
   - qmake CONFIG+=release PREFIX=/usr
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir -j$(nproc) install ; find appdir/
-  - mkdir -p usr/share/icons/hicolor/256x256/apps/ ; cp source/res/icon.png usr/share/icons/hicolor/256x256/apps/hanoi-towers.png
-  - mkdir -p appdir/usr/share/applications ; cp snap/gui/HanoiTower.desktop appdir/usr/share/applications
+  - mkdir -p usr/share/icons/hicolor/256x256/apps/ ; cp res/icon.png usr/share/icons/hicolor/256x256/apps/hanoi-towers.png
+  - mkdir -p appdir/usr/share/applications ; cp ../snap/gui/HanoiTower.desktop appdir/usr/share/applications
   - sed -i -e 's|/snap/hanoi-towers/current/meta/gui/icon.png|hanoi-towers|g' appdir/usr/share/applications/*.desktop
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
