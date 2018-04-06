@@ -32,6 +32,7 @@ script:
 # Log: path: ""
 # Log: type: "module"
 # Log:   Skip import: name or path is empty
+  - find /opt -iname '*Controls*'
   - ./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop -bundle-non-qt-libs -qmldir=. -verbose=3
   - ./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop -appimage -qmldir=.
 
