@@ -21,6 +21,7 @@ script:
   - mkdir -p appdir/usr/share/applications ; cp ../snap/gui/HanoiTower.desktop appdir/usr/share/applications
   - sed -i -e 's|/snap/hanoi-towers/current/meta/gui/icon.png|hanoi-towers|g' appdir/usr/share/applications/*.desktop
   - sed -i -e 's|hanoi-towers|hanoi_towers|g' appdir/usr/share/applications/*.desktop # Bug in desktop file?
+  - sed -i -e 's|Games;Application;|Game;|g' appdir/usr/share/applications/*.desktop # Bug in desktop file!
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
   - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
